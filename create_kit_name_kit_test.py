@@ -36,7 +36,7 @@ def positive_assert(name):
     str_kit = kit_response.json()["name"]
 
     # Comprueba si el usuario o usuaria existe y es único/a
-    assert kit_response.text.count(str_kit) == 1
+    assert str_kit == name
 
 # Función de prueba negativa para los casos en los que la solicitud devuelve un error relacionado con caracteres
 def negative_assert_code_400(name):
@@ -83,7 +83,7 @@ def test_create_kit_has_number_in_name_get_error_response():
 # Prueba 7. Error. Falta el parámetro firstName en la solicitud
 def test_create_user_no_first_name_get_error_response():
     # El diccionario con el cuerpo de la solicitud se copia del archivo "data" a la variable "user_body"
-    kit_body = data.user_body.copy()
+    kit_body = data.kit_body.copy()
     # El parámetro "firstName" se elimina de la solicitud
     kit_body.pop("name")
     # Comprueba la respuesta
