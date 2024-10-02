@@ -14,3 +14,21 @@ kit_body = {
 auth_token = {
     "Authorization": "Bearer jknnFApafP4awfAIFfafam2fma"
 }
+one_letter = {
+        "name": "A"
+}
+max_letters = {
+        "name" : "AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC"
+}
+letters_space = {
+        "name" : "A Aaa"
+}
+special_characters = {
+        "name" : "\"№%@\","
+}
+numbers_characters = {
+        "name" : "123"
+}
+empty_name = {
+        "name" : ""
+}

@@ -58,11 +58,11 @@ def negative_assert_code_400(name):
 
 # Prueba 1. Kit creado con éxito. El parámetro name contiene 1 caracter
 def test_create_kit_1_letter_in_name_get_success_response():
-    positive_assert("a")
+    positive_assert(data.one_letter)
 
 # Prueba 2. Kit creado con éxito. El parámetro name contiene 511 caracteres
 def test_create_kit_511_letter_name_get_success_response():
-    positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
+    positive_assert(data.max_letters)
 
 # Prueba 3. Error. El parámetro firstName contiene 16 caracteres
 def test_create_user_512_letter_in_first_name_get_error_response():
@@ -70,15 +70,15 @@ def test_create_user_512_letter_in_first_name_get_error_response():
 
 # Prueba 4. Usuario o usuaria creada con éxito. El parámetro firstName contiene caracteres latinos
 def test_create_kit_spaces_in_name_get_success_response():
-    positive_assert("A Aaa")
+    positive_assert(data.letters_space)
 
 # Prueba 5.  El parámetro name contiene un string de caracteres especiales
 def test_create_kit_has_special_symbol_in_first_name_get_error_response():
-    positive_assert("\"№%@\",")
+    positive_assert(data.special_characters)
 
 # Prueba 6. El parámetro name contiene un string de dígitos
 def test_create_kit_has_number_in_name_get_error_response():
-    positive_assert("123")
+    positive_assert(data.numbers_characters)
 
 # Prueba 7. Error. Falta el parámetro firstName en la solicitud
 def test_create_user_no_first_name_get_error_response():
@@ -87,11 +87,11 @@ def test_create_user_no_first_name_get_error_response():
     # El parámetro "firstName" se elimina de la solicitud
     kit_body.pop("name")
     # Comprueba la respuesta
-    negative_assert_code_400(kit_body)
+    negative_assert_code_400(None)
 
 # Prueba 8. Error. El parámetro name contiene 0 carácter
 def test_create_kit_0_letter_in_name_get_error_response():
-    negative_assert_code_400("")
+    negative_assert_code_400(data.empty_name)
 
 # Prueba 9. Error. El tipo del parámetro firstName: número
 def test_create_user_number_type_first_name_get_error_response():
